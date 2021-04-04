@@ -8,7 +8,7 @@ import OytStats from 'views/Home/components/OytStats'
 import TotalValueLockedCard from 'views/Home/components/TotalValueLockedCard'
 import EarnAPYCard from 'views/Home/components/EarnAPYCard'
 import EarnAssetCard from 'views/Home/components/EarnAssetCard'
-import Farms from 'views/Farms'
+import Farms from 'views/Home/components/Farms'
 import TwitterCard from 'views/Home/components/TwitterCard'
 
 
@@ -79,6 +79,8 @@ const Home: React.FC = () => {
         <Cards>
           <FarmStakingCard />
           <TwitterCard />
+        </Cards>
+        <Cards>
           <OytStats />
           <TotalValueLockedCard />
         </Cards>
