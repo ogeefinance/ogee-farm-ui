@@ -48,35 +48,26 @@ const Ifo = () => {
           <Title as="h2">{TranslateString(592, 'How to take part')}</Title>
           <Heading mb="16px">{TranslateString(594, 'Before Sale')}:</Heading>
           <List>
-            <li>{TranslateString(596, 'Buy OYT and HT tokens')}</li>
-            <li>{TranslateString(598, 'Get OYT-HT LP tokens by adding OYT and HT liquidity')}</li>
+            <li>{TranslateString(596, 'Buy OGE and HT tokens')}</li>
+            <li>{TranslateString(598, 'Get OGE-HT LP tokens by adding OGE and HT liquidity')}</li>
           </List>
           <Flex mb="16px">
-            <LinkExternal href="https://exchange.ogeeYieldswap.finance/#/swap" mr="16px">
-              {TranslateString(1060, 'Buy OYT')}
+            <LinkExternal href="https://ogeeswap.com/#/swap" mr="16px">
+              {TranslateString(1060, 'Buy OGE')}
             </LinkExternal>
-            <LinkExternal href="https://exchange.ogeeYieldswap.finance/#/add/HT/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82">
+            <LinkExternal href="https://ogeeswap.com/#/add/0x81c3BB76508BB4668fD38DDA71655972F4a3526F/HT">
               {TranslateString(1062, 'Get LP tokens')}
             </LinkExternal>
           </Flex>
           <Heading mb="16px">{TranslateString(600, 'During Sale')}:</Heading>
           <List>
-            <li>{TranslateString(602, 'While the sale is live, commit your OYT-LP tokens to buy the IDO tokens')}</li>
+            <li>{TranslateString(602, 'While the sale is live, commit your OGE-LP [ OLP ] tokens to buy the IDO tokens')}</li>
           </List>
           <Heading mb="16px">{TranslateString(604, 'After Sale')}:</Heading>
           <List>
             <li>{TranslateString(606, 'Claim the tokens you bought, along with any unspent funds.')}</li>
             <li>{TranslateString(608, 'Done!')}</li>
           </List>
-          <Text as="div" pt="16px">
-            <Button
-              as="a"
-              variant="secondary"
-              href="https://docs.ogeeYieldswap.finance/core-products/ido-initial-defi-offering"
-            >
-              {TranslateString(610, 'Read more')}
-            </Button>
-          </Text>
         </div>
         <div>
           <Image src="/images/ogee-shop.svg" alt="ifo bunny" width={436} height={406} responsive />
@@ -85,12 +76,12 @@ const Ifo = () => {
             <Text mb={3}>
               {TranslateString(
                 514,
-                'Launch your project with OgeeYieldSwap, Binance Smart Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC.',
+                'Launch your project with OgeeSwap, Houbi Eco Chain most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on HECO.',
               )}
             </Text>
             <Button
               as="a"
-              href="https://docs.google.com/forms/d/e/1FAIpQLScGdT5rrVMr4WOWr08pvcroSeuIOtEJf1sVdQGVdcAOqryigQ/viewform"
+              href="#comingsoon"
               external
             >
               {TranslateString(516, 'Apply to launch')}

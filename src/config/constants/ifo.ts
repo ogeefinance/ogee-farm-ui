@@ -2,10 +2,10 @@ import { Ifo } from './types'
 
 const ifos: Ifo[] = [
   {
-    id: 'ogee',
+    id: 'OYT',
     address: '',
     isActive: true,
-    name: 'Ogee (OGEE)',
+    name: 'Ogee Yield Token (OYT)',
     subTitle: 'The #1 AMM and yield farm on Huobi ECO Chain.',
     description:
       'The #1 AMM and yield farm on Huobi ECO Chain.',
@@ -15,12 +15,12 @@ const ifos: Ifo[] = [
     raiseAmount: '$XXX',
     oytToBurn: '$XXX',
     projectSiteUrl: 'https://ogee.finance/',
-    currency: 'HUSD-HT LP',
+    currency: 'OGE-HT LP',
     currencyAddress: '',
     tokenDecimals: 18,
-    tokenSymbol: 'OGEE',
+    tokenSymbol: 'OYT',
     releaseBlockNumber: 5493919,
-    campaignId: '511080000',
+    campaignId: '00001',
   },
 ]
 

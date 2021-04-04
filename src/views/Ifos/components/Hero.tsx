@@ -28,7 +28,7 @@ const Hero = () => {
     <StyledHero>
       <Container>
         <Title>{TranslateString(500, 'IDO: Initial DeFi Offerings')}</Title>
-        <Blurb>{TranslateString(502, 'Buy new tokens with a brand new token sale model.')}</Blurb>
+        <Blurb>{TranslateString(502, 'Buy new tokens with a new token sale model.')}</Blurb>
       </Container>
     </StyledHero>
   )

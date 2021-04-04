@@ -52,7 +52,7 @@ const Contribute: React.FC<ContributeProps> = ({
     <Box>
       <Flex mb="4px">
         <Text as="span" bold fontSize="12px" mr="4px" textTransform="uppercase">
-          OYT-HT LP
+          OGE-HT LP
         </Text>
         <Text as="span" color="textSubtle" fontSize="12px" textTransform="uppercase" bold>
           Committed

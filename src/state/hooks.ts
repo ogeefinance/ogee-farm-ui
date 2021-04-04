@@ -94,7 +94,7 @@ export const usePoolFromPid = (ogeeId): Pool => {
 // Prices
 
 export const usePriceHtHusd = (): BigNumber => {
-  const pid = 2 // HUSD-HT LP
+  const pid = 4 // HUSD-HT LP
   const farm = useFarmFromPid(pid)
   return farm.tokenPriceVsQuote ? new BigNumber(1).div(farm.tokenPriceVsQuote) : ZERO
 }
@@ -107,7 +107,7 @@ export const usePriceOytHusd = (): BigNumber => {
 }
 
 export const usePriceEthHusd = (): BigNumber => {
-  const pid = 14 // ETH-HT LP
+  const pid = 3 // ETH-HT LP
   const htPriceUSD = usePriceHtHusd()
   const farm = useFarmFromPid(pid)
   return farm.tokenPriceVsQuote ? htPriceUSD.times(farm.tokenPriceVsQuote) : ZERO

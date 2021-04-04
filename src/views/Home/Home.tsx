@@ -82,9 +82,11 @@ const Home: React.FC = () => {
           <OytStats />
           <TotalValueLockedCard />
         </Cards>
-        <FCards>
-          <Farms />
-        </FCards>
+      </div>
+      <div>
+      <FCards>
+        <Farms />
+      </FCards>
       </div>
     </Page>
   )
