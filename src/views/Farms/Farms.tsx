@@ -213,7 +213,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
                liquidity = oytPrice.times(farm.lpTotalInQuoteToken)
              }
 
-             if (farm.quoteTokenSymbol === QuoteToken.ETH) {
+             if (farm.quoteTokenSymbol === QuoteToken.HUSD) {
                liquidity = ethPriceUsd.times(farm.lpTotalInQuoteToken)
              }
 
@@ -412,7 +412,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </FilterContainer>
         </ControlContainer>
         {renderContent()}
-        <StyledImage src="/images/ogee-bg.svg" alt="Ogee Finance illustration" width={120} height={103} />
+        <StyledImage src="/images/ogee-bg.svg" alt="Ogee Finance" width={120} height={103} />
       </Page>
     </>
   )

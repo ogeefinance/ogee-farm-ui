@@ -21,6 +21,9 @@ import { fetchProfile } from './profile'
 import { fetchTeam, fetchTeams } from './teams'
 import { fetchAchievements } from './achievements'
 import { fetchPrices } from './prices'
+import { QuoteToken } from '../config/constants/types'
+
+
 
 const ZERO = new BigNumber(0)
 
@@ -112,6 +115,30 @@ export const usePriceEthHusd = (): BigNumber => {
   const farm = useFarmFromPid(pid)
   return farm.tokenPriceVsQuote ? htPriceUSD.times(farm.tokenPriceVsQuote) : ZERO
 }
+
+
+export const useTotalValue = (): BigNumber => {
+  const farms = useFarms()
+  const htPrice = usePriceHtHusd()
+  const oytPrice = usePriceOytHusd()
+  let value = new BigNumber(0)
+  for (let i = 0; i < farms.length; i++) {
+    const farm = farms[i]
+    if (farm.lpTotalInQuoteToken) {
+      let val
+      if (farm.quoteTokenSymbol === QuoteToken.HT) {
+        val = htPrice.times(farm.lpTotalInQuoteToken)
+      } else if (farm.quoteTokenSymbol === QuoteToken.OYT) {
+        val = oytPrice.times(farm.lpTotalInQuoteToken)
+      } else {
+        val = farm.lpTotalInQuoteToken
+      }
+      value = value.plus(val)
+    }
+  }
+  return value
+}
+
 
 // Toasts
 export const useToast = () => {
