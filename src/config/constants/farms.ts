@@ -53,18 +53,18 @@ const farms: FarmConfig[] = [
   {
     pid: 3,
     risk: 3,
-    lpSymbol: 'USDT-HT LP',
+    lpSymbol: 'HT-USDT LP',
     lpAddresses: {
       256: '',
       128: '0xB047130ee15FC9daA457501fEa2A9a42f1C4d5c4',
     },
-    tokenSymbol: 'USDT',
+    tokenSymbol: 'HT',
     tokenAddresses: {
       256: '',
-      128: '0xa71EdC38d189767582C38A3145b5873052c3e47a',
+      128: '0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F',
     },
-    quoteTokenSymbol: QuoteToken.HT,
-    quoteTokenAdresses: contracts.wht,
+    quoteTokenSymbol: QuoteToken.USDT,
+    quoteTokenAdresses: contracts.usdt,
   },
   {
     pid: 4,
@@ -85,18 +85,18 @@ const farms: FarmConfig[] = [
   {
     pid: 5,
     risk: 3,
-    lpSymbol: 'USDC-HT LP',
+    lpSymbol: 'HT-USDC LP',
     lpAddresses: {
       256: '',
       128: '0x632637b8D16a7343F454f26960137EDf39cf413e',
     },
-    tokenSymbol: 'USDC',
+    tokenSymbol: 'HT',
     tokenAddresses: {
       256: '',
-      128: '0x9362Bbef4B8313A8Aa9f0c9808B80577Aa26B73B',
+      128: '0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F',
     },
-    quoteTokenSymbol: QuoteToken.HT,
-    quoteTokenAdresses: contracts.wht,
+    quoteTokenSymbol: QuoteToken.USDC,
+    quoteTokenAdresses: contracts.usdc,
   },
   {
     pid: 6,
@@ -118,6 +118,7 @@ const farms: FarmConfig[] = [
     pid: 7,
     risk: 3,
     lpSymbol: 'OGE Solo LP',
+    isTokenOnly: true,
     lpAddresses: {
       256: '',
       128: '0x81c3BB76508BB4668fD38DDA71655972F4a3526F',

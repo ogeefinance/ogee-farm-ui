@@ -116,7 +116,7 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({ details, apr, 
     <Container>
       <InfoContainer>
         <StakeContainer>
-          <StyledLinkExternal href={`https://exchange.ogeeYieldswap.finance/#/add/${liquidityUrlPathParts}`}>
+          <StyledLinkExternal href={`https://ogeeswap.com/#/add/${liquidityUrlPathParts}`}>
             {TranslateString(999, `Get ${lpLabel}`, { name: lpLabel })}
           </StyledLinkExternal>
         </StakeContainer>
