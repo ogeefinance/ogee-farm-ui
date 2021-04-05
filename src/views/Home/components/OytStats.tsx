@@ -7,11 +7,11 @@ import { useTotalSupply, useBurnedBalance } from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
 import { getOytAddress } from 'utils/addressHelpers'
 import CardValue from './CardValue'
-import { useFarms, usePriceOytHusd } from '../../../state/hooks'
+import { usePriceOytHusd } from '../../../state/hooks'
 import CardHusdValue from './CardHusdValue'
 
 
-const StyledFarmStakingCard = styled(Card)`
+const StyledOytStats = styled(Card)`
   background-image: url('/images/stats-bg.svg');
   background-repeat: no-repeat;
   background-position: top right;
@@ -22,38 +22,16 @@ const Block = styled.div`
   margin-bottom: 16px;
 `
 
-const CardImage = styled.img`
-  margin-bottom: 16px;
-`
-
 const Label = styled.div`
   color: ${({ theme }) => theme.colors.textSubtle};
   font-size: 14px;
 `
 
-const Actions = styled.div`
-  margin-top: 24px;
-`
-
-
-const StyledOytStats = styled(Card)`
-  margin-left: auto;
-  margin-right: auto;
-`
-
-const Row = styled.div`
-  align-items: center;
-  display: flex;
-  font-size: 14px;
-  justify-content: space-between;
-  margin-bottom: 8px;
-`
 
 const OytStats = () => {
   const TranslateString = useI18n()
   const totalSupply = useTotalSupply()
   const burnedBalance = useBurnedBalance(getOytAddress())
-  const farms = useFarms()
   const oytPrice = usePriceOytHusd()
   const circSupply = totalSupply ? totalSupply.minus(burnedBalance) : new BigNumber(0)
   const oytSupply = getBalanceNumber(circSupply)
@@ -66,22 +44,22 @@ const OytStats = () => {
 
 
   return (
-    <StyledFarmStakingCard>
+    <StyledOytStats>
       <CardBody>
         <Heading size="xl" mb="24px">
           {TranslateString(534, 'Ogee Yield Stats')}
         </Heading>
         <Block>
-          <Label>{TranslateString(10005, 'Market Cap')}:</Label>
+          <Label>{TranslateString(10005, 'OYT Market Cap')}:</Label>
           <CardValue fontSize="24px" value={getBalanceNumber(marketCap)} decimals={0} prefix="$" />
         </Block>
         <Block>
-          <Label>{TranslateString(536, 'Total Minted')}:</Label>
+          <Label>{TranslateString(536, 'Total OYT Minted')}:</Label>
           {totalSupply && <CardValue fontSize="24px" value={getBalanceNumber(totalSupply)} decimals={0} />}
           <CardHusdValue value={totalMcapHusd} />
         </Block>
         <Block>
-          <Label>{TranslateString(536, 'Total Burned')}:</Label>
+          <Label>{TranslateString(536, 'Total OYT Burned')}:</Label>
           <CardValue fontSize="24px" value={getBalanceNumber(burnedBalance)} decimals={0} />
           <CardHusdValue value={totalBurnedHusd} />
         </Block>
@@ -96,7 +74,7 @@ const OytStats = () => {
           </Text>
         </Block>
       </CardBody>
-    </StyledFarmStakingCard>
+    </StyledOytStats>
   )
 }
 

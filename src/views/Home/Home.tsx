@@ -8,7 +8,7 @@ import OytStats from 'views/Home/components/OytStats'
 import TotalValueLockedCard from 'views/Home/components/TotalValueLockedCard'
 import EarnAPYCard from 'views/Home/components/EarnAPYCard'
 import EarnAssetCard from 'views/Home/components/EarnAssetCard'
-import Farms from 'views/Home/components/Farms'
+// import Farms from 'views/Home/components/Farms'
 // import TwitterCard from 'views/Home/components/TwitterCard'
 
 
@@ -54,14 +54,6 @@ const Cards = styled(BaseLayout)`
       grid-column: span 6;
     }
   }
-`
-
-const FCards = styled(BaseLayout)`
-align-items: center;
-display: flex;
-font-size: 14px;
-justify-content: space-between;
-margin-bottom: 8px;
 `
 
 const CTACards = styled(BaseLayout)`
