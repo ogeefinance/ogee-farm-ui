@@ -8,7 +8,7 @@ import OytStats from 'views/Home/components/OytStats'
 import TotalValueLockedCard from 'views/Home/components/TotalValueLockedCard'
 import EarnAPYCard from 'views/Home/components/EarnAPYCard'
 import EarnAssetCard from 'views/Home/components/EarnAssetCard'
-// import Farms from 'views/Home/components/Farms'
+import Farms from 'views/Home/components/Farms'
 // import TwitterCard from 'views/Home/components/TwitterCard'
 
 
@@ -74,13 +74,20 @@ const CTACards = styled(BaseLayout)`
   }
 `
 
+const FCard = styled(BaseLayout)`
+  align-items: stretch;
+  justify-content: stretch;
+  margin-bottom: 32px;
+  `
+
 const Home: React.FC = () => {
   const TranslateString = useI18n()
 
   return (
+
     <Page>
       <Hero>
-        <Heading as="h1" size="xl" mb="24px" color="secondary">
+        <Heading as="h1" size="xl" mb="26px" color="secondary">
           {TranslateString(576, 'Ogee Finance')}
         </Heading>
         <Text>{TranslateString(578, 'The Best AMM and Yield Farm on Huobi ECO Chain.')}</Text>
@@ -95,9 +102,17 @@ const Home: React.FC = () => {
           <EarnAssetCard />
           <TotalValueLockedCard />
         </CTACards>
+        <div>
+      <Heading as="h1" size="xl" mb="20px" color="secondary">
+      {TranslateString(578, 'Most Profitable Farming Pools')}
+      </Heading>
+         <Farms />
+        </div>
       </div>
-    </Page>
-  )
+
+
+      </Page>
+    )
 }
 
 export default Home

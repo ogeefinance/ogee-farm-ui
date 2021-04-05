@@ -42,7 +42,7 @@ const Collectibles = () => {
       <Text as="p">
         {TranslateString(
           999,
-          'OgeeYield Collectibles are special ERC-721 NFTs that can be used on the OgeeYieldSwap platform.',
+          'OgeeYield Collectibles are special ERC-721 NFTs that can be used on the Ogeeswap platform.',
         )}
       </Text>
       <Text as="p">

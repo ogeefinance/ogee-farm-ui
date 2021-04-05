@@ -4,7 +4,7 @@ import { usePriceOytHusd } from 'state/hooks'
 const useGetDocumentTitlePrice = () => {
   const oytPriceUsd = usePriceOytHusd()
   useEffect(() => {
-    document.title = `OgeeYieldSwap - $${Number(oytPriceUsd).toLocaleString(undefined, {
+    document.title = `Ogeeswap | Best AMM Platform on Houbi Eco Chain - $${Number(oytPriceUsd).toLocaleString(undefined, {
       minimumFractionDigits: 3,
       maximumFractionDigits: 3,
     })}`

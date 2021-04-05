@@ -128,7 +128,7 @@ export const useTotalValue = (): BigNumber => {
       let val
       if (farm.quoteTokenSymbol === QuoteToken.HT) {
         val = htPrice.times(farm.lpTotalInQuoteToken)
-      } else if (farm.quoteTokenSymbol === QuoteToken.OYT) {
+      } else if (farm.quoteTokenSymbol === QuoteToken.OGE) {
         val = oytPrice.times(farm.lpTotalInQuoteToken)
       } else {
         val = farm.lpTotalInQuoteToken
