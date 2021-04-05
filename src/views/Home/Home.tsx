@@ -104,11 +104,6 @@ const Home: React.FC = () => {
           <TotalValueLockedCard />
         </CTACards>
       </div>
-      <div>
-      <FCards>
-        <Farms />
-      </FCards>
-      </div>
     </Page>
   )
 }
