@@ -9,7 +9,7 @@ import TotalValueLockedCard from 'views/Home/components/TotalValueLockedCard'
 import EarnAPYCard from 'views/Home/components/EarnAPYCard'
 import EarnAssetCard from 'views/Home/components/EarnAssetCard'
 import Farms from 'views/Home/components/Farms'
-import TwitterCard from 'views/Home/components/TwitterCard'
+// import TwitterCard from 'views/Home/components/TwitterCard'
 
 
 const Hero = styled.div`
@@ -64,6 +64,24 @@ justify-content: space-between;
 margin-bottom: 8px;
 `
 
+const CTACards = styled(BaseLayout)`
+  align-items: start;
+  margin-bottom: 32px;
+  & > div {
+    grid-column: span 6;
+  }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    & > div {
+      grid-column: span 8;
+    }
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    & > div {
+      grid-column: span 4;
+    }
+  }
+`
+
 const Home: React.FC = () => {
   const TranslateString = useI18n()
 
@@ -78,12 +96,13 @@ const Home: React.FC = () => {
       <div>
         <Cards>
           <FarmStakingCard />
-          <TwitterCard />
-        </Cards>
-        <Cards>
           <OytStats />
-          <TotalValueLockedCard />
         </Cards>
+        <CTACards>
+          <EarnAPYCard />
+          <EarnAssetCard />
+          <TotalValueLockedCard />
+        </CTACards>
       </div>
       <div>
       <FCards>

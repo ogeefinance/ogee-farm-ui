@@ -8,6 +8,32 @@ import useI18n from 'hooks/useI18n'
 import { getOytAddress } from 'utils/addressHelpers'
 import CardValue from './CardValue'
 import { useFarms, usePriceOytHusd } from '../../../state/hooks'
+import CardHusdValue from './CardHusdValue'
+
+
+const StyledFarmStakingCard = styled(Card)`
+  background-image: url('/images/stats-bg.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+  min-height: 376px;
+`
+
+const Block = styled.div`
+  margin-bottom: 16px;
+`
+
+const CardImage = styled.img`
+  margin-bottom: 16px;
+`
+
+const Label = styled.div`
+  color: ${({ theme }) => theme.colors.textSubtle};
+  font-size: 14px;
+`
+
+const Actions = styled.div`
+  margin-top: 24px;
+`
 
 
 const StyledOytStats = styled(Card)`
@@ -32,41 +58,45 @@ const OytStats = () => {
   const circSupply = totalSupply ? totalSupply.minus(burnedBalance) : new BigNumber(0)
   const oytSupply = getBalanceNumber(circSupply)
   const marketCap = oytPrice.times(circSupply)
+  const totalMcapHusd = new BigNumber(totalSupply).multipliedBy(usePriceOytHusd()).toNumber()
+  const totalBurnedHusd = new BigNumber(burnedBalance).multipliedBy(usePriceOytHusd()).toNumber()
 
 
  const oytPerBlock = 0.1
 
 
   return (
-    <StyledOytStats>
+    <StyledFarmStakingCard>
       <CardBody>
         <Heading size="xl" mb="24px">
-          {TranslateString(534, 'OYT Stats')}
+          {TranslateString(534, 'Ogee Yield Stats')}
         </Heading>
-        <Row>
-          <Text fontSize="14px">{TranslateString(10005, 'Market Cap')}</Text>
-          <CardValue fontSize="14px" value={getBalanceNumber(marketCap)} decimals={0} prefix="$" />
-        </Row>
-        <Row>
-          <Text fontSize="14px">{TranslateString(536, 'Total Minted')}</Text>
-          {totalSupply && <CardValue fontSize="14px" value={getBalanceNumber(totalSupply)} decimals={0} />}
-        </Row>
-        <Row>
-          <Text fontSize="14px">{TranslateString(538, 'Total Burned')}</Text>
-          <CardValue fontSize="14px" value={getBalanceNumber(burnedBalance)} decimals={0} />
-        </Row>
-        <Row>
-          <Text fontSize="14px">{TranslateString(10004, 'Circulating Supply')}</Text>
-          {oytSupply && <CardValue fontSize="14px" value={oytSupply} decimals={0} />}
-        </Row>
-        <Row>
-          <Text fontSize="14px">{TranslateString(540, 'New OYT/block')}</Text>
-          <Text bold fontSize="14px">
+        <Block>
+          <Label>{TranslateString(10005, 'Market Cap')}:</Label>
+          <CardValue fontSize="24px" value={getBalanceNumber(marketCap)} decimals={0} prefix="$" />
+        </Block>
+        <Block>
+          <Label>{TranslateString(536, 'Total Minted')}:</Label>
+          {totalSupply && <CardValue fontSize="24px" value={getBalanceNumber(totalSupply)} decimals={0} />}
+          <CardHusdValue value={totalMcapHusd} />
+        </Block>
+        <Block>
+          <Label>{TranslateString(536, 'Total Burned')}:</Label>
+          <CardValue fontSize="24px" value={getBalanceNumber(burnedBalance)} decimals={0} />
+          <CardHusdValue value={totalBurnedHusd} />
+        </Block>
+        <Block>
+          <Label>{TranslateString(10004, 'Circulating Supply')}:</Label>
+          {oytSupply && <CardValue fontSize="24px" value={oytSupply} decimals={0} />}
+        </Block>
+        <Block>
+          <Label>{TranslateString(540, 'New OYT/block')}:</Label>
+          <Text bold fontSize="24px">
             {oytPerBlock}
           </Text>
-        </Row>
+        </Block>
       </CardBody>
-    </StyledOytStats>
+    </StyledFarmStakingCard>
   )
 }
 
