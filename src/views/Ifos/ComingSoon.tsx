@@ -63,7 +63,7 @@ const ComingSoon = () => {
               )}
             </Text>
             <Text mb={3}>
-              <LiquidityLink href="https://ogeeswap.com/#/add/0x81c3BB76508BB4668fD38DDA71655972F4a3526F/HT">
+              <LiquidityLink href="https://ogee.exchange/#/add/0x81c3BB76508BB4668fD38DDA71655972F4a3526F/HT">
                 {TranslateString(506, 'Get OGE-HT LP >')}
               </LiquidityLink>
             </Text>

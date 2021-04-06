@@ -52,10 +52,10 @@ const Ifo = () => {
             <li>{TranslateString(598, 'Get OGE-HT LP tokens by adding OGE and HT liquidity')}</li>
           </List>
           <Flex mb="16px">
-            <LinkExternal href="https://ogeeswap.com/#/swap" mr="16px">
+            <LinkExternal href="https://ogee.exchange/#/swap" mr="16px">
               {TranslateString(1060, 'Buy OGE')}
             </LinkExternal>
-            <LinkExternal href="https://ogeeswap.com/#/add/0x81c3BB76508BB4668fD38DDA71655972F4a3526F/HT">
+            <LinkExternal href="https://ogee.exchange/#/add/0x81c3BB76508BB4668fD38DDA71655972F4a3526F/HT">
               {TranslateString(1062, 'Get LP tokens')}
             </LinkExternal>
           </Flex>

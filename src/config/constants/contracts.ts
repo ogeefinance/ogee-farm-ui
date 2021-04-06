@@ -9,7 +9,7 @@ export default {
   },
   masterChef: {
     265: '',
-    128: '0xcDfd1C98d98BDB0293A0C41C5b978CCdB612F6f5',
+    128: '0x5917897DEdEa3556d8C19eA6e3C861FcbFAe786b',
   },
   ogeeChef: {
     265: '',
@@ -48,7 +48,7 @@ export default {
     265: '',
   },
   ifo: {
-    128: '0x247A7f073CE405cd1cAEB048b16A314997309ebD',
+    128: '0xf27EC4Df257E840C553566831A694E7eBb501271',
     265: '',
   },
   ogeeYieldProfile: {

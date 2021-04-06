@@ -3,7 +3,7 @@ import { Ifo } from './types'
 const ifos: Ifo[] = [
   {
     id: 'oyt',
-    address: '0x247A7f073CE405cd1cAEB048b16A314997309ebD',
+    address: '0xf27EC4Df257E840C553566831A694E7eBb501271',
     isActive: true,
     name: 'Ogee Yield Token (OYT)',
     subTitle: 'The Best AMM and yield farm on Huobi ECO Chain.',
@@ -16,7 +16,7 @@ const ifos: Ifo[] = [
     oytToBurn: '50%',
     projectSiteUrl: 'https://ogeeswap.com/',
     currency: 'OGE-HT LP',
-    currencyAddress: '0xf7e522999cA7F1306D4df1B5eFcCFAB6A1eD99d6',
+    currencyAddress: '0x38F950511a2479206aC640818f1F7bd093277E02',
     tokenDecimals: 18,
     tokenSymbol: 'OYT',
     releaseBlockNumber: 3967480,
