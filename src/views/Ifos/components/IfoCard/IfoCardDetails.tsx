@@ -55,8 +55,8 @@ const IfoCardDetails: React.FC<IfoCardDetailsProps> = ({ ifo, publicIfoData }) =
           </Text>
           <Box mb="24px">
             <Item>
-              <Display>{TranslateString(582, 'Launch Time')}</Display>
-              <Text>
+              <Display>{TranslateString(582, 'Launch Time:')}</Display>
+              <Text fontWeight="600">
                 {launchDate},
                 <Link
                   href="https://www.timeanddate.com/worldclock/timezone/utc"
@@ -70,20 +70,20 @@ const IfoCardDetails: React.FC<IfoCardDetailsProps> = ({ ifo, publicIfoData }) =
               </Text>
             </Item>
             <Item>
-              <Display>{TranslateString(584, 'For Sale')}</Display>
-              <Text>{saleAmount}</Text>
+              <Display>{TranslateString(584, 'For Sale:')}</Display>
+              <Text fontWeight="600">{saleAmount}</Text>
             </Item>
             <Item>
-              <Display>{TranslateString(999, 'To raise (USD)')}</Display>
-              <Text>{raiseAmount}</Text>
+              <Display>{TranslateString(999, 'To Raise (USD):')}</Display>
+              <Text fontWeight="600">{raiseAmount}</Text>
             </Item>
             <Item>
-              <Display>{TranslateString(586, 'OGE to burn (USD)')}</Display>
-              <Text>{oytToBurn}</Text>
+              <Display>{TranslateString(586, 'OGE to Burn (USD):')}</Display>
+              <Text fontWeight="600">{oytToBurn}</Text>
             </Item>
             <Item>
-              <Display>{TranslateString(999, 'Total raised (% of target)')}</Display>
-              <Text>{`${totalAmount.div(raisingAmount).times(100).toFixed(2)}%`}</Text>
+              <Display>{TranslateString(999, 'Total raised (% of target):')}</Display>
+              <Text fontWeight="600">{`${totalAmount.div(raisingAmount).times(100).toFixed(2)}%`}</Text>
             </Item>
           </Box>
           <LinkExternal href={projectSiteUrl} style={{ margin: 'auto' }}>
