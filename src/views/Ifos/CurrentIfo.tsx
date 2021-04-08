@@ -56,7 +56,7 @@ const Ifo = () => {
           <Flex mb="16px">
             <Button
               as="a"
-              href="https://ogee.exchange/#/swap"
+              href="https://ogee.exchange/#/swap?inputCurrency=HT&outputCurrency=0x81c3BB76508BB4668fD38DDA71655972F4a3526F"
               external
               mr="16px"
               scale="sm"
@@ -75,7 +75,7 @@ const Ifo = () => {
           </Flex>
           <Heading mb="16px">{TranslateString(600, 'Step 2: During Sale')}:</Heading>
           <List>
-            <li>{TranslateString(602, 'While the sale is live, commit your OGE-LP [ OLP ] tokens to buy the IDO tokens')}</li>
+            <li>{TranslateString(602, 'While the sale is live, commit your OGE-LP tokens to buy the IDO tokens')}</li>
           </List>
           <Heading mb="16px">{TranslateString(604, 'Step 3: After Sale')}:</Heading>
           <List>

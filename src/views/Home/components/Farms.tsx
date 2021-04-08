@@ -366,7 +366,6 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
               <Toggle checked={stackedOnly} onChange={() => setStackedOnly(!stackedOnly)} scale="sm" />
               <Text> {TranslateString(1116, 'Staked only')}</Text>
             </ToggleWrapper>
-            <FarmTabButtons />
           </ViewControls>
           <FilterContainer>
             <LabelWrapper style={{ marginLeft: 16 }}>
