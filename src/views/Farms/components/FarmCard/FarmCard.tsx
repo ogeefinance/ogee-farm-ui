@@ -141,6 +141,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, oytPrice, htPrice, e
         lpLabel={lpLabel}
         multiplier={farm.multiplier}
         isCommunityFarm={isCommunityFarm}
+        depositFee={farm.depositFeeBP}
         farmImage={farmImage}
         tokenSymbol={farm.tokenSymbol}
       />
@@ -162,6 +163,12 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, oytPrice, htPrice, e
       <Flex justifyContent="space-between">
         <Text>{TranslateString(318, 'Earn')}:</Text>
         <Text bold>{earnLabel}</Text>
+      </Flex>
+      <Flex justifyContent="space-between">
+        <Text style={{ fontSize: '16px' }}>{TranslateString(10001, 'Deposit Fee')}:</Text>
+        <Text bold style={{ fontSize: '16px' }}>
+          {farm.depositFeeBP / 100}%
+        </Text>
       </Flex>
       <CardActionsContainer farm={farm} account={account} addLiquidityUrl={addLiquidityUrl} />
       <Divider />
