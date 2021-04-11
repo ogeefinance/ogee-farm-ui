@@ -7,6 +7,10 @@ import { useTotalValue } from '../../../state/hooks'
 import CardValue from './CardValue'
 
 const StyledTotalValueLockedCard = styled(Card)`
+  background-image: url('/images/tvl-bg.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+  min-height: 146px;
   align-items: center;
   display: flex;
   flex: 1;

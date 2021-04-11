@@ -7,7 +7,10 @@ import pools from 'config/constants/pools'
 import { Pool } from 'state/types'
 
 const StyledFarmStakingCard = styled(Card)`
-  background: linear-gradient(#8787ff, #6945d9);
+  background-image: url('/images/pools-bg.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+  min-height: 146px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -31,7 +34,7 @@ const EarnAssetCard = () => {
         <Heading color="contrast" size="lg">
           Earn
         </Heading>
-        <CardMidContent color="invertedContrast">{assets}</CardMidContent>
+        <CardMidContent color="primary">{assets}</CardMidContent>
         <Flex justifyContent="space-between">
           <Heading color="contrast" size="lg">
             in Pools
