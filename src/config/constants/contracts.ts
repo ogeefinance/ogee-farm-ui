@@ -1,7 +1,7 @@
 export default {
   oyt: {
     265: '',
-    128: '0xf7e522999cA7F1306D4df1B5eFcCFAB6A1eD99d6',
+    128: '0x38F950511a2479206aC640818f1F7bd093277E02',
   },
   oge: {
     265: '',
