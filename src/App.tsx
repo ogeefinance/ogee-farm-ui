@@ -53,10 +53,12 @@ const App: React.FC = () => {
   return (
      <Suspense fallback={null}>
      <HashRouter>
-      <Router history={history}>
+     <Menu>
+
+
       <ResetCSS />
       <GlobalStyle />
-        <Menu>
+
         <SuspenseWithChunkError fallback={<PageLoader />} />
           <Switch>
             <Route exact strict path="/" component={Home} />
@@ -65,11 +67,12 @@ const App: React.FC = () => {
             <Route exact strict path="/ido" component={Ifos} />
             <Route component={NotFound} />
           </Switch>
-              </Menu>
+
               <EasterEgg iterations={2} />
               <ToastListener />
               <GlobalCheckBullHiccupClaimStatus />
-          </Router>
+
+         </Menu>
          </HashRouter>
     </Suspense>
   )
