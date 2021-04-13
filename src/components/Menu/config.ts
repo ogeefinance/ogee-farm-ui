@@ -23,22 +23,22 @@ const config: MenuEntry[] = [
   {
     label: 'Farms',
     icon: 'FarmIcon',
-    href: '/farms',
+    href: '/#/farms',
   },
   {
     label: 'Pools',
     icon: 'PoolIcon',
-    href: '/pools',
+    href: '/#/pools',
   },
 //  {
 //    label: 'Lottery',
 //    icon: 'TicketIcon',
-//    href: '/lottery',
+//    href: '/#/lottery',
 //  },
 //  {
 //    label: 'Collectibles',
 //    icon: 'NftIcon',
-//    href: '/collectibles',
+//    href: '/#/collectibles',
 //  },
 //  {
 //    label: 'Teams & Profile',
@@ -47,15 +47,15 @@ const config: MenuEntry[] = [
 //    items: [
 //      {
 //        label: 'Leaderboard',
-//        href: '/teams',
+//        href: '/#/teams',
 //      },
 //      {
 //        label: 'Task Center',
-//        href: '/profile/tasks',
+//        href: '/#/profile/tasks',
 //      },
 //      {
 //        label: 'Your Profile',
-//        href: '/profile',
+//        href: '/#/profile',
 //      },
 //    ],
 //  },
@@ -84,7 +84,7 @@ const config: MenuEntry[] = [
   {
     label: 'IDO',
     icon: 'IfoIcon',
-    href: '/ido',
+    href: '/#/ido',
   },
   {
     label: 'More',

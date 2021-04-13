@@ -2,13 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { useFarmUser } from 'state/hooks'
 import useI18n from 'hooks/useI18n'
-import { Text, Image } from '@ogeefinance/uikit'
+import {Text, Image } from '@ogeefinance/uikit'
 import { getBalanceNumber } from 'utils/formatBalance'
 
 export interface FarmProps {
   label: string
   pid: number
   image: string
+  depositFee?: number
 }
 
 const IconImage = styled(Image)`
@@ -31,7 +32,7 @@ const Container = styled.div`
   }
 `
 
-const Farm: React.FunctionComponent<FarmProps> = ({ image, label, pid }) => {
+const Farm: React.FunctionComponent<FarmProps> = ({ image, label, pid, depositFee }) => {
   const { stakedBalance } = useFarmUser(pid)
   const TranslateString = useI18n()
   const rawStakedBalance = getBalanceNumber(stakedBalance)
@@ -54,6 +55,7 @@ const Farm: React.FunctionComponent<FarmProps> = ({ image, label, pid }) => {
       <div>
         {handleRenderFarming()}
         <Text bold>{label}</Text>
+        <Text bold>{TranslateString(10001, 'Deposit Fee')}: {depositFee / 100}% </Text>
       </div>
     </Container>
   )

@@ -9,6 +9,10 @@ import { useFarms, usePriceHtHusd } from 'state/hooks'
 import { BLOCKS_PER_YEAR, OYT_PER_BLOCK, OYT_POOL_PID } from 'config'
 
 const StyledFarmStakingCard = styled(Card)`
+  background-image: url('/images/apy-bg.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+  min-height: 146px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;

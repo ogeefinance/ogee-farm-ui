@@ -103,7 +103,14 @@ export const usePriceHtHusd = (): BigNumber => {
 }
 
 export const usePriceOytHusd = (): BigNumber => {
-  const pid = 1 // OYT-HT LP
+  const pid = 2 // OYT-HT LP
+  const htPriceUSD = usePriceHtHusd()
+  const farm = useFarmFromPid(pid)
+  return farm.tokenPriceVsQuote ? htPriceUSD.times(farm.tokenPriceVsQuote) : ZERO
+}
+
+export const usePriceOgeHusd = (): BigNumber => {
+  const pid = 1 // OGE-HT LP
   const htPriceUSD = usePriceHtHusd()
   const farm = useFarmFromPid(pid)
   return farm.tokenPriceVsQuote ? htPriceUSD.times(farm.tokenPriceVsQuote) : ZERO

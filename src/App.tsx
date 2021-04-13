@@ -62,16 +62,16 @@ const App: React.FC = () => {
             <Route path="/pools" exact>
               <Pools />
             </Route>
-          <Route path="/ido" exact>
+            <Route path="/ido" exact>
               <Ifos />
             </Route>
-        <Route component={NotFound} />
-          </Switch>
-        </SuspenseWithChunkError>
+            <Route component={NotFound} />
+              </Switch>
+              </SuspenseWithChunkError>
       </Menu>
-      <EasterEgg iterations={2} />
-      <ToastListener />
-      <GlobalCheckBullHiccupClaimStatus />
+              <EasterEgg iterations={2} />
+              <ToastListener />
+              <GlobalCheckBullHiccupClaimStatus />
     </Router>
   )
 }

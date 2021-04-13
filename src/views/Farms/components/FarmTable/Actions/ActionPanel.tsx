@@ -109,7 +109,7 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({ details, apr, 
   const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAdresses, tokenAddresses })
   const lpAddress = farm.lpAddresses[process.env.REACT_APP_CHAIN_ID]
   const bsc = `https://hecoinfo.com/address/${lpAddress}`
-  const info = `https://ogeeYieldswap.info/pair/${lpAddress}`
+  const info = `https://info.ogeeswap.com/pair/${lpAddress}`
   const isCommunityFarm = communityFarms.includes(tokenSymbol)
 
   return (

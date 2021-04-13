@@ -10,6 +10,7 @@ import EarnAPYCard from 'views/Home/components/EarnAPYCard'
 import EarnAssetCard from 'views/Home/components/EarnAssetCard'
 import Farms from 'views/Home/components/Farms'
 // import TwitterCard from 'views/Home/components/TwitterCard'
+// import BurnedStats from 'views/Home/components/BurnedStats'
 
 
 const Hero = styled.div`
@@ -31,6 +32,16 @@ const Hero = styled.div`
     height: 165px;
     padding-top: 0;
   }
+`
+const Hero2 = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 8px;
+  padding-top: 32px;
+  text-align: center;
 `
 
 const Cards = styled(BaseLayout)`
@@ -102,12 +113,14 @@ const Home: React.FC = () => {
           <EarnAssetCard />
           <TotalValueLockedCard />
         </CTACards>
-        <div>
-      <Heading as="h1" size="xl" mb="20px" color="secondary">
-      {TranslateString(578, 'Most Profitable Farming Pools')}
-      </Heading>
+      <div>
+      <Hero2>
+        <Heading as="h1" size="xl" color="secondary">
+          {TranslateString(578, 'Most Profitable Farming Pools')}
+        </Heading>
+      </Hero2>
          <Farms />
-        </div>
+      </div>
       </div>
 
 

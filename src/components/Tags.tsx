@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tag, VerifiedIcon, CommunityIcon, HuobiIcon } from '@ogeefinance/uikit'
+import { Tag, VerifiedIcon, CommunityIcon, HuobiIcon, FeeIcon } from '@ogeefinance/uikit'
 
 const CoreTag = (props) => (
   <Tag variant="secondary" outline startIcon={<VerifiedIcon />} {...props}>
@@ -13,9 +13,15 @@ const CommunityTag = (props) => (
   </Tag>
 )
 
-const BinanceTag = (props) => (
+const HuobiTag = (props) => (
   <Tag variant="huobi" outline startIcon={<HuobiIcon />} {...props}>
     Huobi
+  </Tag>
+)
+
+const FeeTag = (props) => (
+  <Tag variant="fee" outline startIcon={<FeeIcon />} {...props}>
+    Fee
   </Tag>
 )
 
@@ -25,4 +31,4 @@ const DualTag = (props) => (
   </Tag>
 )
 
-export { CoreTag, CommunityTag, BinanceTag, DualTag }
+export { CoreTag, CommunityTag, HuobiTag, FeeTag, DualTag }

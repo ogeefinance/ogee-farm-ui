@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import BigNumber from 'bignumber.js/bignumber'
 import { Text, Button, Input, InputProps, Flex, Link } from '@ogeefinance/uikit'
 import useI18n from '../../hooks/useI18n'
 
@@ -12,6 +13,7 @@ interface ModalInputProps {
   value: string
   addLiquidityUrl?: string
   inputTitle?: string
+  depositFeeBP?: number
 }
 
 const getBoxShadow = ({ isWarning = false, theme }) => {
@@ -55,6 +57,15 @@ const StyledErrorMessage = styled(Text)`
     display: inline;
   }
 `
+const StyledMaxText = styled.div`
+  align-items: center;
+  color: ${(props) => props.theme.colors.primary};
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  height: 44px;
+  justify-content: flex-end;
+`
 
 const ModalInput: React.FC<ModalInputProps> = ({
   max,
@@ -64,6 +75,7 @@ const ModalInput: React.FC<ModalInputProps> = ({
   value,
   addLiquidityUrl,
   inputTitle,
+  depositFeeBP = 0,
 }) => {
   const TranslateString = useI18n()
   const isBalanceZero = max === '0' || !max
@@ -95,6 +107,12 @@ const ModalInput: React.FC<ModalInputProps> = ({
           </Link>
         </StyledErrorMessage>
       )}
+      {depositFeeBP > 0 ? (
+      <StyledMaxText>
+        {TranslateString(10001, 'Deposit Fee')}: {new BigNumber(value || 0).times(depositFeeBP / 10000).toString()}{' '}
+        {symbol}
+      </StyledMaxText>
+    ) : null}
     </div>
   )
 }

@@ -36,18 +36,16 @@ const OytStats = () => {
   const circSupply = totalSupply ? totalSupply.minus(burnedBalance) : new BigNumber(0)
   const oytSupply = getBalanceNumber(circSupply)
   const marketCap = oytPrice.times(circSupply)
-  const totalMcapHusd = new BigNumber(totalSupply).multipliedBy(usePriceOytHusd()).toNumber()
-  const totalBurnedHusd = new BigNumber(burnedBalance).multipliedBy(usePriceOytHusd()).toNumber()
-
-
- const oytPerBlock = 0.1
+  const totalMcapHusd = new BigNumber(totalSupply).div(new BigNumber(10).pow(18)).multipliedBy(usePriceOytHusd()).toNumber()
+  const totalBurnedHusd = new BigNumber(burnedBalance).div(new BigNumber(10).pow(18)).multipliedBy(usePriceOytHusd()).toNumber()
+  const oytPerBlock = 0.1
 
 
   return (
     <StyledOytStats>
       <CardBody>
         <Heading size="xl" mb="24px">
-          {TranslateString(534, 'Ogee Yield Stats')}
+          {TranslateString(534, 'OYT Stats')}
         </Heading>
         <Block>
           <Label>{TranslateString(10005, 'OYT Market Cap')}:</Label>
@@ -56,12 +54,12 @@ const OytStats = () => {
         <Block>
           <Label>{TranslateString(536, 'Total OYT Minted')}:</Label>
           {totalSupply && <CardValue fontSize="24px" value={getBalanceNumber(totalSupply)} decimals={0} />}
-          <CardHusdValue value={totalMcapHusd} />
+          {totalMcapHusd && <CardHusdValue value={totalMcapHusd} decimals={0}/>}
         </Block>
         <Block>
           <Label>{TranslateString(536, 'Total OYT Burned')}:</Label>
           <CardValue fontSize="24px" value={getBalanceNumber(burnedBalance)} decimals={0} />
-          <CardHusdValue value={totalBurnedHusd} />
+          {totalBurnedHusd && <CardHusdValue value={totalBurnedHusd} decimals={0}/>}
         </Block>
         <Block>
           <Label>{TranslateString(10004, 'Circulating Supply')}:</Label>

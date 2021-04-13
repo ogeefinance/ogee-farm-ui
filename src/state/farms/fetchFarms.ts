@@ -92,6 +92,7 @@ const fetchFarms = async () => {
         tokenPriceVsQuote: quoteTokenAmount.div(tokenAmount).toJSON(),
         poolWeight: poolWeight.toJSON(),
         multiplier: `${allocPoint.div(100).toString()}X`,
+        depositFeeBP: info.depositFeeBP,
       }
     }),
   )

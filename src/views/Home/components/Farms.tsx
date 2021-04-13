@@ -271,6 +271,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         image: farm.lpSymbol.split(' ')[0].toLocaleLowerCase(),
         label: lpLabel,
         pid: farm.pid,
+        depositFee: farm.depositFeeBP,
       },
       earned: {
         earnings: farm.userData ? getBalanceNumber(new BigNumber(farm.userData.earnings)) : null,
@@ -366,7 +367,6 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
               <Toggle checked={stackedOnly} onChange={() => setStackedOnly(!stackedOnly)} scale="sm" />
               <Text> {TranslateString(1116, 'Staked only')}</Text>
             </ToggleWrapper>
-            <FarmTabButtons />
           </ViewControls>
           <FilterContainer>
             <LabelWrapper style={{ marginLeft: 16 }}>
