@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import Providers from './Providers'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <Providers>
       <App />
     </Providers>
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root'),
 )
