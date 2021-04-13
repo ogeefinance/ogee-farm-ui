@@ -6,14 +6,14 @@ import useI18n from 'hooks/useI18n'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { Flex, MetamaskIcon } from '@ogeefinance/uikit'
 import Balance from 'components/Balance'
-import { CommunityTag, CoreTag, BinanceTag } from 'components/Tags'
+import { CommunityTag, CoreTag, HuobiTag } from 'components/Tags'
 import { useBlock } from 'state/hooks'
 import { PoolCategory } from 'config/constants/types'
 import { registerToken } from 'utils/wallet'
 import { BASE_URL } from 'config'
 
 const tags = {
-  [PoolCategory.BINANCE]: BinanceTag,
+  [PoolCategory.BINANCE]: HuobiTag,
   [PoolCategory.CORE]: CoreTag,
   [PoolCategory.COMMUNITY]: CommunityTag,
 }
