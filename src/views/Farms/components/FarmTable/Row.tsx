@@ -9,6 +9,7 @@ import Farm, { FarmProps } from './Farm'
 import Earned, { EarnedProps } from './Earned'
 import Details from './Details'
 import Multiplier, { MultiplierProps } from './Multiplier'
+import DepositFee, { DepositFeeProps } from './DepositFee'
 import Liquidity, { LiquidityProps } from './Liquidity'
 import ActionPanel from './Actions/ActionPanel'
 import CellLayout from './CellLayout'
@@ -19,6 +20,7 @@ export interface RowProps {
   farm: FarmProps
   earned: EarnedProps
   multiplier: MultiplierProps
+  depositFee: DepositFeeProps
   liquidity: LiquidityProps
   details: FarmWithStakedValue
 }
@@ -29,6 +31,7 @@ const cells = {
   earned: Earned,
   details: Details,
   multiplier: Multiplier,
+  depositFee: DepositFee,
   liquidity: Liquidity,
 }
 

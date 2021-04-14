@@ -154,6 +154,8 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         return orderBy(farms, (farm: FarmWithStakedValue) => (farm.userData ? farm.userData.earnings : 0), 'desc')
       case 'liquidity':
         return orderBy(farms, (farm: FarmWithStakedValue) => Number(farm.liquidity), 'desc')
+      case 'depositFee':
+        return orderBy(farms, (farm: FarmWithStakedValue) => Number(farm.depositFeeBP), 'asc')
       default:
         return farms
     }
@@ -271,7 +273,6 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         image: farm.lpSymbol.split(' ')[0].toLocaleLowerCase(),
         label: lpLabel,
         pid: farm.pid,
-        depositFee: farm.depositFeeBP,
       },
       earned: {
         earnings: farm.userData ? getBalanceNumber(new BigNumber(farm.userData.earnings)) : null,
@@ -282,6 +283,9 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       },
       multiplier: {
         multiplier: farm.multiplier,
+      },
+      depositFee: {
+        depositFee: farm.depositFeeBP,
       },
       details: farm,
     }
@@ -401,6 +405,10 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
                   {
                     label: 'Liquidity',
                     value: 'liquidity',
+                  },
+                  {
+                    label: 'Deposit Fee',
+                    value: 'depositFee',
                   },
                 ]}
                 onChange={handleSortOptionChange}

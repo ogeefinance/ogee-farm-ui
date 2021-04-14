@@ -11,11 +11,13 @@ import HarvestAction from './HarvestAction'
 import StakedAction from './StakedAction'
 import Apr, { AprProps } from '../Apr'
 import Multiplier, { MultiplierProps } from '../Multiplier'
+import DepositFee, { DepositFeeProps } from '../DepositFee'
 import Liquidity, { LiquidityProps } from '../Liquidity'
 
 export interface ActionPanelProps {
   apr: AprProps
   multiplier: MultiplierProps
+  depositFee: DepositFeeProps
   liquidity: LiquidityProps
   details: FarmWithStakedValue
 }
@@ -100,7 +102,7 @@ const ValueWrapper = styled.div`
   margin: 4px 0px;
 `
 
-const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({ details, apr, multiplier, liquidity }) => {
+const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({ details, apr, multiplier, depositFee, liquidity }) => {
   const farm = details
 
   const TranslateString = useI18n()
@@ -135,6 +137,10 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({ details, apr, 
         <ValueWrapper>
           <Text>{TranslateString(999, 'Multiplier')}</Text>
           <Multiplier {...multiplier} />
+        </ValueWrapper>
+        <ValueWrapper>
+          <Text>{TranslateString(999, 'DepositFee')}</Text>
+          <DepositFee {...depositFee} />
         </ValueWrapper>
         <ValueWrapper>
           <Text>{TranslateString(999, 'Liquidity')}</Text>

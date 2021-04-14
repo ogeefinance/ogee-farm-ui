@@ -271,7 +271,6 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         image: farm.lpSymbol.split(' ')[0].toLocaleLowerCase(),
         label: lpLabel,
         pid: farm.pid,
-        depositFee: farm.depositFeeBP,
       },
       earned: {
         earnings: farm.userData ? getBalanceNumber(new BigNumber(farm.userData.earnings)) : null,
@@ -282,6 +281,9 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       },
       multiplier: {
         multiplier: farm.multiplier,
+      },
+      depositFee: {
+        depositFee: farm.depositFeeBP,
       },
       details: farm,
     }
