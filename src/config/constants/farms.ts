@@ -5,15 +5,15 @@ const farms: FarmConfig[] = [
   {
     pid: 0,
     risk: 3,
-    lpSymbol: 'OGE-HUSD LP',
+    lpSymbol: 'OYT-HUSD LP',
     lpAddresses: {
       256: '',
-      128: '0xA31fb834f59468a92FD488f66E53122C6ABFf039',
+      128: '0xC09B70BBC99F53E64b58C1f3F65c28C3E611F378',
     },
-    tokenSymbol: 'OGE',
+    tokenSymbol: 'OYT',
     tokenAddresses: {
       256: '',
-      128: '0x81c3BB76508BB4668fD38DDA71655972F4a3526F',
+      128: '0x38F950511a2479206aC640818f1F7bd093277E02',
     },
     quoteTokenSymbol: QuoteToken.HUSD,
     quoteTokenAdresses: contracts.husd,
@@ -40,12 +40,12 @@ const farms: FarmConfig[] = [
     lpSymbol: 'OYT-HT LP',
     lpAddresses: {
       256: '',
-      128: '0xd02C649E62E21F13fdD7F82b5c263D617f645606',
+      128: '0x9477267a58513a4C241571acd082E5B50154411B',
     },
     tokenSymbol: 'OYT',
     tokenAddresses: {
       256: '',
-      128: '0xf7e522999cA7F1306D4df1B5eFcCFAB6A1eD99d6',
+      128: '0x38F950511a2479206aC640818f1F7bd093277E02',
     },
     quoteTokenSymbol: QuoteToken.HT,
     quoteTokenAdresses: contracts.wht,
