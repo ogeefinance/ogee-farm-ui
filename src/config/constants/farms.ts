@@ -2,22 +2,7 @@ import contracts from './contracts'
 import { FarmConfig, QuoteToken } from './types'
 
 const farms: FarmConfig[] = [
-  {
-    pid: 0,
-    risk: 3,
-    lpSymbol: 'OYT-HUSD LP',
-    lpAddresses: {
-      256: '',
-      128: '0xC09B70BBC99F53E64b58C1f3F65c28C3E611F378',
-    },
-    tokenSymbol: 'OYT',
-    tokenAddresses: {
-      256: '',
-      128: '0x38F950511a2479206aC640818f1F7bd093277E02',
-    },
-    quoteTokenSymbol: QuoteToken.HUSD,
-    quoteTokenAdresses: contracts.husd,
-  },
+
   {
     pid: 1,
     risk: 3,
@@ -34,6 +19,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.HT,
     quoteTokenAdresses: contracts.wht,
   },
+
   {
     pid: 2,
     risk: 3,
@@ -49,6 +35,22 @@ const farms: FarmConfig[] = [
     },
     quoteTokenSymbol: QuoteToken.HT,
     quoteTokenAdresses: contracts.wht,
+  },
+  {
+    pid: 6,
+    risk: 3,
+    lpSymbol: 'OGE-USDT LP',
+    lpAddresses: {
+      256: '',
+      128: '0x31193a6559F0E33D1A2BBe4413F1b98E7bff8170',
+    },
+    tokenSymbol: 'OGE',
+    tokenAddresses: {
+      256: '',
+      128: '0x81c3BB76508BB4668fD38DDA71655972F4a3526F',
+    },
+    quoteTokenSymbol: QuoteToken.USDT,
+    quoteTokenAdresses: contracts.usdt,
   },
   {
     pid: 3,
@@ -83,6 +85,22 @@ const farms: FarmConfig[] = [
     quoteTokenAdresses: contracts.wht,
   },
   {
+    pid: 0,
+    risk: 3,
+    lpSymbol: 'OGE-HUSD LP',
+    lpAddresses: {
+      256: '',
+      128: '0xA31fb834f59468a92FD488f66E53122C6ABFf039',
+    },
+    tokenSymbol: 'OYT',
+    tokenAddresses: {
+      256: '',
+      128: '0x81c3BB76508BB4668fD38DDA71655972F4a3526F',
+    },
+    quoteTokenSymbol: QuoteToken.HUSD,
+    quoteTokenAdresses: contracts.husd,
+  },
+  {
     pid: 5,
     risk: 3,
     lpSymbol: 'HT-USDC LP',
@@ -98,27 +116,11 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.USDC,
     quoteTokenAdresses: contracts.usdc,
   },
-  {
-    pid: 6,
-    risk: 3,
-    lpSymbol: 'OGE-USDT LP',
-    lpAddresses: {
-      256: '',
-      128: '0x31193a6559F0E33D1A2BBe4413F1b98E7bff8170',
-    },
-    tokenSymbol: 'OGE',
-    tokenAddresses: {
-      256: '',
-      128: '0x81c3BB76508BB4668fD38DDA71655972F4a3526F',
-    },
-    quoteTokenSymbol: QuoteToken.HT,
-    quoteTokenAdresses: contracts.wht,
-  },
+
   {
     pid: 7,
     risk: 3,
     lpSymbol: 'OGE Solo LP',
-    isTokenOnly: true,
     lpAddresses: {
       256: '',
       128: '0x81c3BB76508BB4668fD38DDA71655972F4a3526F',
@@ -128,8 +130,8 @@ const farms: FarmConfig[] = [
       256: '',
       128: '0x81c3BB76508BB4668fD38DDA71655972F4a3526F',
     },
-    quoteTokenSymbol: QuoteToken.OGE,
-    quoteTokenAdresses: contracts.oge,
+    quoteTokenSymbol: QuoteToken.OYT,
+    quoteTokenAdresses: contracts.oyt,
   },
 ]
 

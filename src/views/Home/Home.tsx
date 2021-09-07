@@ -6,8 +6,8 @@ import Page from 'components/layout/Page'
 import FarmStakingCard from 'views/Home/components/FarmStakingCard'
 import OytStats from 'views/Home/components/OytStats'
 import TotalValueLockedCard from 'views/Home/components/TotalValueLockedCard'
-import EarnAPYCard from 'views/Home/components/EarnAPYCard'
-import EarnAssetCard from 'views/Home/components/EarnAssetCard'
+// import EarnAPYCard from 'views/Home/components/EarnAPYCard'
+// import EarnAssetCard from 'views/Home/components/EarnAssetCard'
 import Farms from 'views/Home/components/Farms'
 // import TwitterCard from 'views/Home/components/TwitterCard'
 // import BurnedStats from 'views/Home/components/BurnedStats'
@@ -84,12 +84,13 @@ const CTACards = styled(BaseLayout)`
     }
   }
 `
-
+/*
 const FCard = styled(BaseLayout)`
   align-items: stretch;
   justify-content: stretch;
   margin-bottom: 32px;
   `
+*/
 
 const Home: React.FC = () => {
   const TranslateString = useI18n()
@@ -109,8 +110,6 @@ const Home: React.FC = () => {
           <OytStats />
         </Cards>
         <CTACards>
-          <EarnAPYCard />
-          <EarnAssetCard />
           <TotalValueLockedCard />
         </CTACards>
       <div>

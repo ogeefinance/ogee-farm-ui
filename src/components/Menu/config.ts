@@ -87,6 +87,11 @@ const config: MenuEntry[] = [
     href: '/ido',
   },
   {
+    label: 'CerTik Audit',
+    icon: 'IfoIcon',
+    href: 'https://github.com/ogeefinance/ogee-audit-certik/blob/main/REP-OgeeSwap%20AMM-2021-07-07.pdf',
+    },
+  {
     label: 'More',
     icon: 'MoreIcon',
     items: [

@@ -61,4 +61,28 @@ export const useBurnedBalance = (tokenAddress: string) => {
   return balance
 }
 
+export const useLbalance = (tokenAddress: string) => {
+  const [lbalance, setLbalance] = useState(new BigNumber(0))
+  const { slowRefresh } = useRefresh()
+  const web3 = useWeb3()
+
+  useEffect(() => {
+    const fetchBalance = async () => {
+      const contract = getBep20Contract(tokenAddress, web3)
+      const res = await contract.methods.balanceOf('0x38F950511a2479206aC640818f1F7bd093277E02').call()
+      setLbalance(new BigNumber(res))
+    }
+
+    fetchBalance()
+  }, [web3, tokenAddress, slowRefresh])
+
+  return lbalance
+}
+
+
+
+
+
+
+
 export default useTokenBalance

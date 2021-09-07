@@ -53,7 +53,7 @@ const EarnAPYCard = () => {
 
         let apy = oytPriceVsHT.times(oytRewardPerYear).div(farm.lpTotalInQuoteToken)
 
-        if (farm.quoteTokenSymbol === QuoteToken.HUSD) {
+        if (farm.quoteTokenSymbol === QuoteToken.HT) {
           apy = oytPriceVsHT.times(oytRewardPerYear).div(farm.lpTotalInQuoteToken).times(htPrice)
         } else if (farm.quoteTokenSymbol === QuoteToken.OYT) {
           apy = oytRewardPerYear.div(farm.lpTotalInQuoteToken)

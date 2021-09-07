@@ -3,12 +3,14 @@ import { Card, CardBody, Heading, Text } from '@ogeefinance/uikit'
 import BigNumber from 'bignumber.js/bignumber'
 import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { useTotalSupply, useBurnedBalance } from 'hooks/useTokenBalance'
+import { useTotalSupply, useBurnedBalance, useLbalance } from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
+import { BLOCKS_PER_YEAR, OYT_PER_BLOCK, OYT_POOL_PID } from 'config'
 import { getOytAddress } from 'utils/addressHelpers'
 import CardValue from './CardValue'
 import { usePriceOytHusd } from '../../../state/hooks'
 import CardHusdValue from './CardHusdValue'
+
 
 
 const StyledOytStats = styled(Card)`
@@ -32,13 +34,15 @@ const OytStats = () => {
   const TranslateString = useI18n()
   const totalSupply = useTotalSupply()
   const burnedBalance = useBurnedBalance(getOytAddress())
+  const lockedBalance = useLbalance(getOytAddress())
+  // const lbBalance = new BigNumber(lockedBalance)
   const oytPrice = usePriceOytHusd()
   const circSupply = totalSupply ? totalSupply.minus(burnedBalance) : new BigNumber(0)
   const oytSupply = getBalanceNumber(circSupply)
   const marketCap = oytPrice.times(circSupply)
   const totalMcapHusd = new BigNumber(totalSupply).div(new BigNumber(10).pow(18)).multipliedBy(usePriceOytHusd()).toNumber()
   const totalBurnedHusd = new BigNumber(burnedBalance).div(new BigNumber(10).pow(18)).multipliedBy(usePriceOytHusd()).toNumber()
-  const oytPerBlock = 0.1
+  const oytPerBlock = Number(OYT_PER_BLOCK)
 
 
   return (
@@ -54,16 +58,14 @@ const OytStats = () => {
         <Block>
           <Label>{TranslateString(536, 'Total OYT Minted')}:</Label>
           {totalSupply && <CardValue fontSize="24px" value={getBalanceNumber(totalSupply)} decimals={0} />}
-          {totalMcapHusd && <CardHusdValue value={totalMcapHusd} decimals={0}/>}
         </Block>
         <Block>
           <Label>{TranslateString(536, 'Total OYT Burned')}:</Label>
-          <CardValue fontSize="24px" value={getBalanceNumber(burnedBalance)} decimals={0} />
-          {totalBurnedHusd && <CardHusdValue value={totalBurnedHusd} decimals={0}/>}
+          <CardValue fontSize="24px" value={getBalanceNumber(burnedBalance)+3000000} decimals={0} />
         </Block>
         <Block>
           <Label>{TranslateString(10004, 'Circulating Supply')}:</Label>
-          {oytSupply && <CardValue fontSize="24px" value={oytSupply} decimals={0} />}
+          {oytSupply && <CardValue fontSize="24px" value={oytSupply-3000000} decimals={0} />}
         </Block>
         <Block>
           <Label>{TranslateString(540, 'New OYT/block')}:</Label>

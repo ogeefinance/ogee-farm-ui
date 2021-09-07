@@ -2,7 +2,7 @@ import { PoolConfig, QuoteToken, PoolCategory } from './types'
 
 const pools: PoolConfig[] = [
   {
-    ogeeId: 0,
+    ogeeId: 77,
     tokenName: 'OYT',
     tokenAddress: '',
     stakingTokenName: QuoteToken.OYT,
@@ -13,10 +13,10 @@ const pools: PoolConfig[] = [
     },
     poolCategory: PoolCategory.CORE,
     projectLink: 'https://ogee.finance/',
-    harvest: true,
+    harvest: false,
     tokenPerBlock: '0.1',
     sortOrder: 1,
-    isFinished: false,
+    isFinished: true,
     tokenDecimals: 18,
   },
 ]

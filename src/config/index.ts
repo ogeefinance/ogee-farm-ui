@@ -5,10 +5,10 @@ BigNumber.config({
   DECIMAL_PLACES: 80,
 })
 
-export const OYT_PER_BLOCK = new BigNumber(0.1)
+export const OYT_PER_BLOCK = new BigNumber(0.25)
 export const BLOCKS_PER_YEAR = new BigNumber(10512000)
 export const BSC_BLOCK_TIME = 3
-export const OYT_POOL_PID = 1
+export const OYT_POOL_PID = 2
 export const BASE_URL = 'https://ogee.finance'
 export const BASE_EXCHANGE_URL = 'https://ogee.exchange'
 export const BASE_ADD_LIQUIDITY_URL = `${BASE_EXCHANGE_URL}/#/add`

@@ -48,7 +48,7 @@ export default {
     265: '',
   },
   ifo: {
-    128: '0xf27EC4Df257E840C553566831A694E7eBb501271',
+    128: '0x3495162187dcAE3fF6EA99d1525aF3E980F6b9d4',
     265: '',
   },
   ogeeYieldProfile: {

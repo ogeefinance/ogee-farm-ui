@@ -5,7 +5,7 @@ import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
 import { Image, Heading, RowType, Toggle, Text } from '@ogeefinance/uikit'
 import styled from 'styled-components'
-import { BLOCKS_PER_YEAR, OYT_PER_BLOCK, OYT_POOL_PID } from 'config'
+import { BLOCKS_PER_YEAR, OYT_POOL_PID } from 'config'
 import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
 import { useFarms, usePriceHtHusd, usePriceOytHusd, usePriceEthHusd } from 'state/hooks'
@@ -114,7 +114,7 @@ const Header = styled.div`
   }
 `
 
-const Farms: React.FC<FarmsProps> = (farmsProps) => {
+const Farms: React.FC<FarmsProps> = () => {
   const { path } = useRouteMatch()
   const { pathname } = useLocation()
   const TranslateString = useI18n()
@@ -126,7 +126,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const ethPriceUsd = usePriceEthHusd()
   const { account } = useWeb3React()
   const [sortOption, setSortOption] = useState('hot')
-  const { tokenMode } = farmsProps
+  // const { tokenMode } = farmsProps
   const dispatch = useDispatch()
   const { fastRefresh } = useRefresh()
   useEffect(() => {
@@ -171,7 +171,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
           return farm
         }
-        const oytRewardPerBlock = new BigNumber(farm.oytPerBlock || 0.1)
+        const oytRewardPerBlock = new BigNumber(farm.oytPerBlock || 0.25)
           .times(new BigNumber(farm.poolWeight))
           .div(new BigNumber(10).pow(18))
         const oytRewardPerYear = oytRewardPerBlock.times(BLOCKS_PER_YEAR)
@@ -184,9 +184,9 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
 
 
-        if (farm.quoteTokenSymbol === QuoteToken.HUSD || farm.quoteTokenSymbol === QuoteToken.USDT) {
+        if (farm.quoteTokenSymbol === QuoteToken.USDT || farm.quoteTokenSymbol === QuoteToken.USDT) {
                apy = oytPriceVsHT.times(oytRewardPerYear).div(farm.lpTotalInQuoteToken).times(htPrice)
-             } else if (farm.quoteTokenSymbol === QuoteToken.ETH) {
+             } else if (farm.quoteTokenSymbol === QuoteToken.HT) {
                apy = oytPrice.div(ethPriceUsd).times(oytRewardPerYear).div(farm.lpTotalInQuoteToken)
              } else if (farm.quoteTokenSymbol === QuoteToken.OYT) {
                apy = oytRewardPerYear.div(farm.lpTotalInQuoteToken)
@@ -206,7 +206,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
              let liquidity = farm.lpTotalInQuoteToken
 
              if (!farm.lpTotalInQuoteToken) {
-               liquidity = null
+               liquidity = 0
              }
              if (farm.quoteTokenSymbol === QuoteToken.HT) {
                liquidity = htPrice.times(farm.lpTotalInQuoteToken)
@@ -215,7 +215,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
                liquidity = oytPrice.times(farm.lpTotalInQuoteToken)
              }
 
-             if (farm.quoteTokenSymbol === QuoteToken.HUSD) {
+             if (farm.quoteTokenSymbol === QuoteToken.USDT) {
                liquidity = ethPriceUsd.times(farm.lpTotalInQuoteToken)
              }
 
